@@ -1,17 +1,40 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
-public class Main {
-    public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.print("Hello and welcome!");
-
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
-
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+import java.util.Scanner;
+public class Main{
+    
+public static void SortArray(int[] x ){
+    for (int i = 0; i < x.length; i++)   
+{  
+        for (int j = i + 1; j < x.length; j++)   
+    {  
+        int tmp = 0;  
+        if (x[i] > x[j]){  
+            tmp = x[i];  
+            x[i] = x[j];  
+            x[j] = tmp;  
         }
+    }
+}}
+    public static void main(String[] args) {
+        Integer Num  ;
+        
+        Scanner sc = new Scanner(System.in) ;
+       do{
+        System.out.print("Enter Amount of Number(Non-Negative) : ");
+        Num =sc.nextInt() ;
+       }while(Num <0) ;
+       int[] Result = new int[Num];
+        System.out.println("Enter "+Num+" Integers:");
+       for(int i= 0 ; i< Num;i++) {
+            Result[i] = sc.nextInt() ;
+       }
+       SortArray(Result) ;
+       System.out.println();
+       System.out.println("Sorted Result");
+        // System.out.print("[ ") ;
+        for(int i = 0  ; i< Result.length ; i++){
+            System.out.println(Result[i] + " ");
+            }
+        //  System.out.print(" ] ") ;
+        sc.close(); ;
     }
 }
